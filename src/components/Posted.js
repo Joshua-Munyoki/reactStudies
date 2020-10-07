@@ -14,16 +14,25 @@ function Posted() {
         { name: "mbambi", message: "yao yap yoo" }
     ];
 
+    function clickHandler() {
+        return (
+            console.log({ details })
+        )
+    }
+
+
     return (
         details.map(
             (posted) => {
                 return (
-                    <div className="posted">
-                        <div className="profileImg">
-                            <img src={ProfilePic} alt="" />
+                    <button className="button" onClick={clickHandler}>
+                        <div className="posted">
+                            <div className="profileImg">
+                                <img src={ProfilePic} alt="" />
+                            </div>
+                            <Post name={posted.name} post={posted.message} />
                         </div>
-                        <Post name={posted.name} post={posted.message} />
-                    </div>
+                    </button>
                 )
             }
         )

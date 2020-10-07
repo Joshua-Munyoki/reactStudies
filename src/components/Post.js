@@ -1,13 +1,16 @@
 import React from 'react';
 import '../App.css';
 
-function Post (props) {
+function Post(props) {
+
     
-    return(
-        <div className="post">
-            <h2>{props.name}</h2>
-            <p> {props.post} </p>
-        </div>
+    return (
+        
+            <div className="post">
+                <h2 className="name">{props.name}</h2>
+                <p className="message">{props.message}</p>
+            </div>
+        
     );
 }
 
