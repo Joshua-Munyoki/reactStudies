@@ -4,22 +4,27 @@ import './App.css';
 
 const details = [
   {
-    id: 1,
+    id: 29292929,
     name: 'Mango',
     message: 'soskosk sijisu osiuoisuou osiusoiu'
   },
   {
-    id: 2,
+    id: 237377,
     name: 'Mpp o',
     message: 's  sisisin [ps[psiuoisuou osiusoiu'
   },
   {
-    id: 3,
+    id: 9990203,
     name: 'oragne',
     message: 'sossss  osiusoiu'
   },
   {
-    id: 4,
+    id: 11993934,
+    name: 'tomato',
+    message: 'toooos osiusoiu'
+  },
+  {
+    id: 9393887487,
     name: 'tomato',
     message: 'toooos osiusoiu'
   }
@@ -27,7 +32,7 @@ const details = [
 
 class App extends React.Component {
   click(clickedId) {
-    console.log('Clicked', clickedId);
+    console.log('Clicked id =', clickedId);
   }
 
   render() {
@@ -40,7 +45,6 @@ class App extends React.Component {
                 key={detail.id}
                 id={detail.id}
                 name={detail.name}
-                message={detail.message}
                 clicked={this.click}
               />
             )
