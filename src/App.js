@@ -45,10 +45,10 @@ class App extends React.Component {
       detail => detail.id === clickedId,
     );
 
-    console.log(
-      'App::',
-      foundObject,
-    );
+    // console.log(
+    //   'App::',
+    //   foundObject,
+    // );
 
     this.setState({
       clickedObject: foundObject,
