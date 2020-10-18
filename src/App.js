@@ -32,7 +32,12 @@ const details = [
 
 class App extends React.Component {
   click(clickedId) {
-    console.log('Clicked id =', clickedId);
+    console.log(
+      'Clicked object =',
+      details.find(
+        detail => detail.id === clickedId,
+      ),
+    );
   }
 
   render() {
