@@ -1,9 +1,21 @@
 import React from 'react'
 
 class AppChildPost extends React.Component {
+    clickHandler() {
+        this.props.clicked(
+            this.props.id,
+        )
+    }
+
     render() {
         return (
-            <div>Child component</div>
+            <li>
+                <button
+                    onClick={() => this.clickHandler()}
+                >
+                    {this.props.name}
+                </button>
+            </li>
         )
     }
 }

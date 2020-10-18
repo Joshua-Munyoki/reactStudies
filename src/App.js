@@ -26,8 +26,8 @@ const details = [
 ]
 
 class App extends React.Component {
-  click() {
-    console.log('Clicked');
+  click(clickedId) {
+    console.log('Clicked', clickedId);
   }
 
   render() {
