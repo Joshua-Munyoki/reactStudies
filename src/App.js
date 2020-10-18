@@ -1,4 +1,5 @@
 import React from 'react';
+import AppChildViewPost from './components/AppChildViewPost';
 import AppChildPost from './components/AppChildPost';
 import './App.css';
 
@@ -42,20 +43,23 @@ class App extends React.Component {
 
   render() {
     return (
-      <ul>
-        {
-          details.map(
-            detail => (
-              <AppChildPost
-                key={detail.id}
-                id={detail.id}
-                name={detail.name}
-                clicked={this.click}
-              />
+      <>
+        <ul>
+          {
+            details.map(
+              detail => (
+                <AppChildPost
+                  key={detail.id}
+                  id={detail.id}
+                  name={detail.name}
+                  clicked={this.click}
+                />
+              )
             )
-          )
-        }
-      </ul>
+          }
+        </ul>
+        <AppChildViewPost />
+      </>
     );
   }
 }
