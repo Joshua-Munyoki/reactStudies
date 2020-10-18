@@ -32,13 +32,27 @@ const details = [
 ]
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      clickedObject: null
+    };
+    this.click = this.click.bind(this);
+  }
+
   click(clickedId) {
-    console.log(
-      'Clicked object =',
-      details.find(
-        detail => detail.id === clickedId,
-      ),
+    const foundObject = details.find(
+      detail => detail.id === clickedId,
     );
+
+    console.log(
+      'App::',
+      foundObject,
+    );
+
+    this.setState({
+      clickedObject: foundObject,
+    })
   }
 
   render() {
@@ -52,13 +66,21 @@ class App extends React.Component {
                   key={detail.id}
                   id={detail.id}
                   name={detail.name}
+                  // This is without setting bind(this) on constructor
+                  // clicked={
+                  //   (id) => {
+                  //     this.click(id);
+                  //   }
+                  // }
                   clicked={this.click}
                 />
               )
             )
           }
         </ul>
-        <AppChildViewPost />
+        <AppChildViewPost
+          clickedObject={this.state.clickedObject}
+        />
       </>
     );
   }
