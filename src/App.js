@@ -35,16 +35,17 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      clickedObject: null
+      clickedObject: null,
+      active: false,
     };
     this.click = this.click.bind(this);
+    this.colorChange = this.colorChange.bind(this);
   }
 
   click(clickedId) {
     const foundObject = details.find(
       detail => detail.id === clickedId,
     );
-
     // console.log(
     //   'App::',
     //   foundObject,
@@ -52,10 +53,16 @@ class App extends React.Component {
 
     this.setState({
       clickedObject: foundObject,
+      active: true, 
     })
   }
 
+  colorChange(redButton){
+    console.log(`change COLOR of id ${redButton} to red`)
+  }
+
   render() {
+   
     return (
       <>
         <ul>
@@ -73,13 +80,22 @@ class App extends React.Component {
                   //   }
                   // }
                   clicked={this.click}
+                  color={this.colorChange}
+                  isActive={
+                    this.state.clickedObject && 
+                    this.state.clickedObject.id &&
+                    this.state.clickedObject.id === detail.id
+                  }
+                  
                 />
               )
             )
           }
         </ul>
+        {console.log(`this from app ${this.state.active}`)}
         <AppChildViewPost
           clickedObject={this.state.clickedObject}
+          active={this.state.active}
         />
       </>
     );
