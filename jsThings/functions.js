@@ -36,6 +36,13 @@ console.log(`Function which add 2 numbers = ${funcAdd(10, 20)}`);
 
 let figures = [757, 352, 989, 443];
 
+
+/* let sum = 0;
+for(let a of figures)
+sum += a;
+
+console.log(`total of an array = ${sum}`)*/
+
 const total = (array) => (
     // .Reduce() method executes a render function on each element of an array resulting in one single output value.
 
